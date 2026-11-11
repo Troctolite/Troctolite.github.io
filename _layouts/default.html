@@ -1,0 +1,29 @@
+---
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f5ef">
+  <meta name="description" content="Geetika Chauhan — hydrology, GIS, environmental data and visual storytelling. Explore selected projects and creative work.">
+  <title>{% if page.title %}{{ page.title | escape }} · {% endif %}{{ site.title }}</title>
+  <link rel="stylesheet" href="{{ "/styles.css" | relative_url }}">
+  <script defer src="{{ "/script.js" | relative_url }}"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header" id="top">
+    <div class="shell nav-wrap">
+      <a class="wordmark" href="{{ "/" | relative_url }}" aria-label="Geetika Chauhan, home">Geetika<span class="wordmark-dot">.</span> Chauhan</a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation"><span></span><span></span></button>
+      <nav id="primary-nav" class="primary-nav" aria-label="Main navigation">
+        <a href="{{ "/#work" | relative_url }}">Selected work</a><a href="{{ "/#about" | relative_url }}">About</a><a href="{{ "/#creative" | relative_url }}">Creative notes</a><a href="{{ "/journal/" | relative_url }}">Journal</a><a href="{{ "/#contact" | relative_url }}">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+{{ content }}
+  <footer class="site-footer"><div class="shell footer-inner"><span>© <span id="year">2026</span> Geetika Chauhan</span><span>Made with curiosity & care.</span></div></footer>
+</body>
+</html>

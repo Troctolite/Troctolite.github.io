@@ -1,0 +1,10 @@
+title: "Geetika Chauhan — Science, Maps & Stories"
+description: "Hydrology, GIS, environmental data and visual storytelling."
+url: "" # Optional: add https://YOURUSERNAME.github.io later
+baseurl: "" # Leave blank for YOURUSERNAME.github.io repository
+markdown: kramdown
+permalink: /journal/:year/:month/:day/:title/
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
