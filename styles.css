@@ -18,11 +18,26 @@
   object-fit: contain;
 }
 
-/* Resize the Vistula map on the homepage */
+
+/* Homepage hero: balanced text and portrait map */
+
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+  align-items: center;
+  gap: clamp(32px, 5vw, 80px);
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+.hero-copy {
+  min-width: 0;
+}
 
 .hero-art {
   width: 100%;
-  max-width: 380px;
+  max-width: 340px;
+  min-width: 0;
   margin: 0 auto;
 }
 
@@ -30,16 +45,23 @@
   display: block;
   width: 100%;
   height: auto;
-  max-height: 520px;
+  max-height: 460px;
   object-fit: contain;
 }
 
 @media (max-width: 768px) {
+  .hero {
+    grid-template-columns: 1fr;
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
+
   .hero-art {
     max-width: 300px;
   }
 
   .hero-map {
-    max-height: 420px;
+    max-height: 410px;
   }
 }
+
