@@ -1292,3 +1292,45 @@ p {
     animation-duration: .01ms !important;
   }
 }
+
+/* Actual navigation structure */
+
+.nav-wrap {
+  min-height: 84px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.wordmark {
+  color: #f1f0e8;
+  font-family: 'DM Serif Display', Georgia, serif;
+  font-size: 25px;
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+.wordmark-dot {
+  color: #a0d9bb;
+}
+
+@media (max-width: 850px) {
+  .nav-wrap {
+    flex-wrap: wrap;
+  }
+
+  .primary-nav {
+    gap: 14px;
+  }
+}
+
+@media (max-width: 620px) {
+  .nav-wrap {
+    min-height: 72px;
+  }
+
+  .wordmark {
+    font-size: 22px;
+  }
+}
