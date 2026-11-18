@@ -65,3 +65,33 @@
   }
 }
 
+
+/* First pass: dark website theme */
+
+html,
+body {
+  background: #101C19;
+  color: #B8C8BD;
+}
+
+.site-header,
+.site-footer {
+  background: #101C19;
+  color: #F1F0E8;
+}
+
+.hero h1,
+.section h2,
+.about-band h2,
+.atlas-band h2,
+.contact-section h2 {
+  color: #F1F0E8;
+}
+
+.hero-lede,
+.hero-support,
+.location-line {
+  color: #B8C8BD;
+}
+
+
