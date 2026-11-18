@@ -1415,3 +1415,29 @@ p {
     height: 350px;
   }
 }
+
+
+/* CONTACT PAGE */
+
+.contact-intro {
+  max-width: 750px;
+  margin: 0 0 30px;
+  color: #b8c8bd;
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+#contact .home-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 28px;
+}
+
+@media (max-width: 600px) {
+  #contact .home-actions {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
