@@ -1508,14 +1508,17 @@ p {
 }
 .maps-gallery .map-placeholder { height: 220px; }
 
-/* Compact homepage artwork; keep original two-column hero */
-.home-map { max-width: 300px; margin-inline: auto; }
+/* Larger homepage artwork */
+.home-map {
+  width: 100%;
+  max-width: 440px;
+  margin-inline: auto;
+}
+
 .home-map img {
+  display: block;
   width: 100%;
   height: auto;
-  max-height: 340px;
+  max-height: 72vh;
   object-fit: contain;
-}
-@media (max-width: 700px) {
-  .maps-gallery { grid-template-columns: minmax(0, 280px); }
 }
