@@ -1490,3 +1490,13 @@ p {
   gap: 14px;
 }
 
+
+/* Maps gallery image sizing */
+
+.maps-gallery .map-card img {
+  display: block;
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  object-position: center;
+}
