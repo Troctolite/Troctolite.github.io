@@ -1508,17 +1508,29 @@ p {
 }
 .maps-gallery .map-placeholder { height: 220px; }
 
-/* Larger homepage artwork */
+/* Large homepage map — fill the right column */
 .home-map {
   width: 100%;
-  max-width: 440px;
-  margin-inline: auto;
+  max-width: none;
+  margin: 0;
+  justify-self: stretch;
 }
 
 .home-map img {
   display: block;
-  width: 100%;
-  height: auto;
-  max-height: 72vh;
+  width: auto;
+  max-width: 100%;
+  height: min(82vh, 850px);
+  max-height: none;
   object-fit: contain;
+  margin-inline: auto;
+}
+
+/* Keep the map responsive on smaller screens */
+@media (max-width: 850px) {
+  .home-map img {
+    width: 100%;
+    height: auto;
+    max-height: 75vh;
+  }
 }
