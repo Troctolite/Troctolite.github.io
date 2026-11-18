@@ -1,9 +1,10 @@
-title: "Geetika Chauhan — Science, Maps & Stories"
-description: "Hydrology, GIS, environmental data and visual storytelling."
-url: "" # Optional: add https://YOURUSERNAME.github.io later
-baseurl: "" # Leave blank for YOURUSERNAME.github.io repository
+title: "Geetika Chauhan | Water & Environmental Data Analyst"
+description: "Water and environmental data analysis, GIS, cartography and visual storytelling."
+url: "https://troctolite.github.io"
+baseurl: ""
 markdown: kramdown
 permalink: /journal/:year/:month/:day/:title/
+
 exclude:
   - README.md
   - Gemfile
