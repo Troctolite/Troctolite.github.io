@@ -7,7 +7,6 @@ permalink: /journal/:year/:month/:day/:title/
 
 exclude:
   - geetika-portfolio-with-blog
-
   - README.md
   - Gemfile
   - Gemfile.lock
