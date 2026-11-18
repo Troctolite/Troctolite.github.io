@@ -1441,3 +1441,52 @@ p {
   }
 }
 
+/* ABOUT PAGE */
+
+.about-content {
+  max-width: 780px;
+  margin-top: 40px;
+}
+
+.about-content > p {
+  margin-bottom: 24px;
+  color: #b8c8bd;
+  font-size: 16px;
+  line-height: 1.9;
+}
+
+.about-content > .home-lead {
+  color: #f1f0e8;
+  font-size: 21px;
+  line-height: 1.6;
+}
+
+.about-cv {
+  margin-top: 55px;
+  padding-top: 35px;
+  border-top: 1px solid #354b40;
+}
+
+.about-cv h2 {
+  margin-bottom: 18px;
+  font-family: "DM Serif Display", Georgia, serif;
+  font-size: 32px;
+  font-weight: 400;
+  color: #f1f0e8;
+}
+
+.about-cv > p {
+  color: #b8c8bd;
+  line-height: 1.8;
+}
+
+.about-cv .home-tags {
+  margin: 25px 0 30px;
+}
+
+.about-cv .home-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
