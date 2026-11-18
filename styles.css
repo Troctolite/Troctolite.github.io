@@ -121,3 +121,17 @@
     padding-bottom: 70px;
   }
 }
+
+
+/* Small map preview */
+.maps-gallery .map-card {
+  max-width: 280px;
+}
+
+.maps-gallery .map-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: contain;
+  object-position: center;
+}
+
