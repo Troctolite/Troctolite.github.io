@@ -82,3 +82,220 @@ body, .site-header, .site-footer { background: var(--paper); color: var(--ink); 
     font-size: clamp(44px, 9vw, 60px);
   }
 }
+
+
+/* ==========================================
+   HOMEPAGE — WATER DATA ANALYST
+   ========================================== */
+
+.hero.shell {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  align-items: center;
+  gap: clamp(30px, 5vw, 75px);
+  min-height: calc(100svh - 88px);
+  padding-block: 48px;
+}
+
+.hero-copy {
+  min-width: 0;
+}
+
+.hero h1 {
+  font-size: clamp(52px, 5.3vw, 82px);
+  line-height: 1.08;
+  letter-spacing: -2px;
+  max-width: 720px;
+}
+
+.hero h1 em {
+  color: #A0D9BB;
+}
+
+.hero-lede {
+  color: #F1F0E8;
+  font-size: 19px;
+}
+
+.hero-support {
+  color: #B8C8BD;
+  font-size: 15px;
+}
+
+.hero-art {
+  width: 100% !important;
+  max-width: none !important;
+  min-width: 0 !important;
+  min-height: 0 !important;
+  height: auto !important;
+  max-height: none !important;
+  align-self: center;
+  position: relative;
+  margin: 0 !important;
+}
+
+.hero-art img.hero-map {
+  display: block;
+  width: 100% !important;
+  height: auto !important;
+  max-height: min(75svh, 750px) !important;
+  object-fit: contain;
+}
+
+.hero-art .art-caption {
+  position: static;
+  display: block;
+  text-align: center;
+  margin-top: 12px;
+  font-size: 11px;
+  color: #B8C8BD;
+}
+
+.button-outline {
+  border: 1px solid #A0D9BB;
+  color: #A0D9BB;
+  background: transparent;
+}
+
+.button-outline:hover {
+  background: #19382F;
+}
+
+.button-primary {
+  background: #A0D9BB;
+  color: #101C19;
+}
+
+.button-primary:hover {
+  background: #C0E7CF;
+  color: #101C19;
+}
+
+/* ==========================================
+   SERVICES
+   ========================================== */
+
+.services-section {
+  padding: 105px 0;
+  background: #152720;
+  color: #F1F0E8;
+}
+
+.services-section .section-head p {
+  color: #B8C8BD;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.service-card {
+  padding: 36px;
+  background: #19382F;
+  border: 1px solid #354B40;
+  transition: border-color 0.2s ease;
+}
+
+.service-card:hover {
+  border-color: #A0D9BB;
+}
+
+.service-number {
+  color: #A0D9BB;
+  font-size: 12px;
+  letter-spacing: 2px;
+}
+
+.service-card h3 {
+  font-size: 30px;
+  color: #F1F0E8;
+  margin: 24px 0 14px;
+}
+
+.service-card p {
+  font-size: 15px;
+  line-height: 1.75;
+  color: #B8C8BD;
+}
+
+.service-tools {
+  display: block;
+  margin-top: 26px;
+  padding-top: 15px;
+  border-top: 1px solid #354B40;
+  color: #A0D9BB;
+  font-size: 12px;
+}
+
+.services-footer {
+  margin-top: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.services-footer p {
+  color: #B8C8BD;
+}
+
+/* ==========================================
+   RESPONSIVE
+   ========================================== */
+
+@media (max-width: 850px) {
+  .hero.shell {
+    grid-template-columns: minmax(0, 1fr);
+    min-height: 0;
+    gap: 35px;
+    padding-block: 55px;
+  }
+
+  .hero-art {
+    max-width: 420px !important;
+    margin: 0 auto !important;
+  }
+
+  .hero-art img.hero-map {
+    max-height: 560px !important;
+  }
+}
+
+@media (max-width: 620px) {
+  .hero h1 {
+    font-size: clamp(44px, 10vw, 62px);
+    letter-spacing: -1.5px;
+  }
+
+  .hero-actions {
+    gap: 16px;
+  }
+
+  .hero-art {
+    max-width: 310px !important;
+  }
+
+  .hero-art img.hero-map {
+    max-height: 420px !important;
+  }
+
+  .services-section {
+    padding: 70px 0;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .service-card {
+    padding: 26px;
+  }
+
+  .services-footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
