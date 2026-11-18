@@ -10,7 +10,7 @@ permalink: /maps/
 
     <div class="home-section-heading">
       <div>
-        <p class="home-kicker">CARTOGRAPHY & VISUAL STORYTELLING</p>
+        <p class="home-kicker">CARTOGRAPHY</p>
         <h1>Maps<span style="color:#a0d9bb">.</span></h1>
       </div>
 
@@ -20,23 +20,29 @@ permalink: /maps/
       </p>
     </div>
 
-    <div class="maps-gallery">
+    <div class="maps-gallery" id="maps-gallery">
 
       <!-- MAP 01 -->
       <article class="map-card">
 
-        <a href="{{ '/projects/right-lung-of-poland/' | relative_url }}">
+        <a href="#lung-map"
+           class="map-zoom-link"
+           aria-label="Enlarge The Right Lung of Poland">
+
           <img
             src="{{ '/images/vitula%20lung.png' | relative_url }}"
-            alt="The Right Lung of Poland, Vistula river network map"
+            alt="The Right Lung of Poland, Vistula river network"
             loading="lazy"
           >
+
         </a>
 
-        <p class="home-project-type">RIVER NETWORKS / QGIS</p>
+        <p class="home-project-type">
+          RIVER NETWORKS / QGIS
+        </p>
 
         <h2>
-          <a href="{{ '/projects/right-lung-of-poland/' | relative_url }}">
+          <a href="#lung-map">
             The Right Lung of Poland
           </a>
         </h2>
@@ -46,32 +52,9 @@ permalink: /maps/
           drainage network using Strahler stream order.
         </p>
 
-      </article>
-
-      <!-- MAP 02 -->
-      <article class="map-card">
-
-        <a href="https://troctolite.github.io/Rhythm-of-Polish-river/"
-           target="_blank" rel="noopener noreferrer">
-
-          <div class="map-placeholder">
-            <span>RHYTHM OF POLISH RIVERS</span>
-          </div>
-
-        </a>
-
-        <p class="home-project-type">INTERACTIVE MAP / HYDROLOGY</p>
-
-        <h2>
-          <a href="https://troctolite.github.io/Rhythm-of-Polish-river/"
-             target="_blank" rel="noopener noreferrer">
-            Rhythm of Polish Rivers
-          </a>
-        </h2>
-
-        <p>
-          An interactive exploration of river-flow
-          patterns across Poland.
+        <p class="map-copyright">
+          © 2026 Geetika Chauhan. Original cartographic design.
+          All rights reserved.
         </p>
 
       </article>
@@ -79,5 +62,19 @@ permalink: /maps/
     </div>
 
   </section>
+
+  <!-- ENLARGED MAP VIEWER -->
+  <div id="lung-map" class="map-lightbox">
+
+    <a href="#maps-gallery"
+       class="map-lightbox-close"
+       aria-label="Close enlarged map">×</a>
+
+    <img
+      src="{{ '/images/vitula%20lung.png' | relative_url }}"
+      alt="The Right Lung of Poland, enlarged map"
+    >
+
+  </div>
 
 </main>
