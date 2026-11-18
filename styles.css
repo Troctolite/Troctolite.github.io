@@ -331,9 +331,7 @@ p {
 
 .home-hero-inner {
   display: grid;
-  grid-template-columns:
-    minmax(0, 1.05fr)
-    minmax(0, .95fr);
+ grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
   gap: clamp(30px, 4vw, 70px);
   align-items: center;
 
@@ -1532,5 +1530,25 @@ p {
     width: 100%;
     height: auto;
     max-height: 75vh;
+  }
+}
+/* Give the artwork more space */
+@media (min-width: 851px) {
+  .home-hero-inner {
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    gap: 35px;
+  }
+
+  .home-map {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+  }
+
+  .home-map img {
+    width: 100%;
+    height: auto;
+    max-height: none;
+    object-fit: contain;
   }
 }
