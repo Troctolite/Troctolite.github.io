@@ -11,7 +11,21 @@ layout: default
         <div class="hero-actions"><a class="button button-primary" href="{{ "/projects/" | relative_url }}">Explore my work <span aria-hidden="true">↗</span></a><a class="text-link" href="{{ "/cv/" | relative_url }}">View CV <span aria-hidden="true">↗</span></a><a class="text-link" href="{{ "/about/" | relative_url }}">About me <span aria-hidden="true">↗</span></a></div>
         <p class="location-line">Based in Warsaw, Poland <span aria-hidden="true">✳</span> Hydrology · GIS · Visual storytelling</p>
       </div>
-      <div class="hero-art" role="img" aria-label="Original abstract illustration of a winding river flowing through green contour-like landscape shapes">
+      
+<div class="hero-art">
+  <img
+    src="{{ '/images/vitula%20lung.png' | relative_url }}"
+    alt="The Vistula river basin in Poland, visualised using Strahler stream order."
+    class="hero-map"
+    loading="eager"
+    fetchpriority="high"
+    decoding="async"
+  >
+  <span class="art-caption">
+    The Vistula Basin · QGIS · HydroRIVERS
+  </span>
+</div>
+
         <svg viewBox="0 0 550 620" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <rect width="550" height="620" rx="4" fill="#dce4d7"/>
           <path d="M0 130C140 40 240 92 350 0H550V620H0Z" fill="#c0d0be"/>
