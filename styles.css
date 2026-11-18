@@ -54,3 +54,31 @@ body, .site-header, .site-footer { background: var(--paper); color: var(--ink); 
   .hero-art { max-width: 280px; }
   .hero-art img.hero-map { max-height: 380px; }
 }
+
+/* Homepage typography refinements */
+
+.hero h1 {
+  font-size: clamp(48px, 5vw, 76px);
+  line-height: 1.12;
+  letter-spacing: -1.8px;
+}
+
+.hero h1 em {
+  color: #A0C9B0;
+}
+
+.hero.shell {
+  align-items: center;
+  padding-top: 65px;
+  padding-bottom: 65px;
+}
+
+.hero-art {
+  align-self: center;
+}
+
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: clamp(44px, 9vw, 60px);
+  }
+}
