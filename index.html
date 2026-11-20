@@ -1,3 +1,4 @@
+
 ---
 layout: default
 ---
@@ -9,6 +10,9 @@ layout: default
     <div class="home-hero-inner shell">
 
       <div class="home-intro">
+        <p class="home-kicker">
+          WATER &amp; ENVIRONMENTAL DATA ANALYST
+        </p>
 
         <h1 id="hero-heading">
           Storytelling <em>through data.</em>
@@ -55,118 +59,89 @@ layout: default
   <div class="home-expertise">
     <div class="shell home-expertise-inner">
       <span>DATA ANALYSIS</span>
-      <span>GIS & CARTOGRAPHY</span>
+      <span>GIS &amp; CARTOGRAPHY</span>
       <span>HYDROLOGY</span>
       <span>DATA VISUALISATION</span>
     </div>
   </div>
 
-  <!-- PROJECTS -->
-  <section class="home-section shell" id="work">
+  <!-- EXPLORE PORTFOLIO -->
+  <section class="home-section shell" id="explore">
 
     <div class="home-section-heading">
-      <h2>Projects</h2>
+      <div>
+        <p class="home-kicker">EXPLORE</p>
+        <h2>Different ways of <em>seeing the world.</em></h2>
+      </div>
+
+      <p>
+        From hydrology and data analysis to maps,
+        writing and visual storytelling.
+      </p>
     </div>
 
-    <div class="home-projects">
+    {% assign portfolio_paths = '/about/,/projects/,/maps/,/blog/,/comics/,/contact/' | split: ',' %}
 
-      <!-- PROJECT 01 -->
-      <article class="home-project">
+    <div class="portfolio-grid">
 
-        <div class="home-project-number">01</div>
+      {% for path in portfolio_paths %}
+        {% assign matched_page = site.pages | where: 'url', path | first %}
 
-        <div class="home-project-content">
-          <p class="home-project-type">
-            HYDROLOGY / DATA ANALYSIS
-          </p>
+        {% if matched_page %}
 
-          <h3>How river engineering shapes flow</h3>
+          {% case path %}
 
-          <p>
-            Analysed long-term river-flow records from
-            140 hydrological stations across Poland
-            to investigate trends, periodicity and
-            the influence of hydrotechnical structures.
-          </p>
+            {% when '/about/' %}
+              {% assign fallback_title = 'About Me' %}
+              {% assign fallback_description = 'My journey from geology and GIS to hydrology and data visualisation.' %}
 
-          <div class="home-tags">
-            <span>R</span>
-            <span>QGIS</span>
-            <span>Time-series analysis</span>
-          </div>
-        </div>
+            {% when '/projects/' %}
+              {% assign fallback_title = 'Projects' %}
+              {% assign fallback_description = 'Research and applied projects in water, data analysis and GIS.' %}
 
-        <span class="home-project-year">2021–2026</span>
-      </article>
+            {% when '/maps/' %}
+              {% assign fallback_title = 'Maps' %}
+              {% assign fallback_description = 'Cartographic explorations of rivers, landscapes and spatial patterns.' %}
 
-      <!-- PROJECT 02 -->
-      <article class="home-project">
+            {% when '/blog/' %}
+              {% assign fallback_title = 'Blog' %}
+              {% assign fallback_description = 'Notes on research, mapping, methods and observations.' %}
 
-        <div class="home-project-number">02</div>
+            {% when '/comics/' %}
+              {% assign fallback_title = 'Comics' %}
+              {% assign fallback_description = 'Drawings, experiments and stories told visually.' %}
 
-        <div class="home-project-content">
-          <p class="home-project-type">
-            INTERACTIVE MAPPING / HYDROLOGY
-          </p>
+            {% when '/contact/' %}
+              {% assign fallback_title = 'Contact' %}
+              {% assign fallback_description = 'Get in touch about roles, collaborations or creative projects.' %}
 
-          <h3>
-            <a href="https://troctolite.github.io/Rhythm-of-Polish-river/"
-               target="_blank"
-               rel="noopener noreferrer">
-              Rhythm of Polish Rivers
-            </a>
-          </h3>
+          {% endcase %}
 
-          <p>
-            An interactive exploration of river-flow
-            patterns in Poland, bringing hydrological
-            information into a visual format that
-            visitors can explore.
-          </p>
+          <a class="portfolio-card"
+             href="{{ matched_page.url | relative_url }}">
 
-          <div class="home-tags">
-            <span>Hydrology</span>
-            <span>Interactive mapping</span>
-            <span>Data visualisation</span>
-          </div>
+            <span class="portfolio-card-label">
+              {{ forloop.index | prepend: '0' | slice: -2, 2 }}
+            </span>
 
-          <a class="home-text-link"
-             href="https://troctolite.github.io/Rhythm-of-Polish-river/"
-             target="_blank"
-             rel="noopener noreferrer">
-            Explore interactive map ↗
+            <h3>
+              {{ matched_page.title | default: fallback_title | escape }}
+            </h3>
+
+            <p>
+              {{ matched_page.description | default: fallback_description | escape }}
+            </p>
+
+            <span class="portfolio-card-link">
+              Explore ↗
+            </span>
+
           </a>
-        </div>
 
-        <span class="home-project-year">2026</span>
-      </article>
+        {% endif %}
+      {% endfor %}
 
     </div>
-
-    <a class="home-text-link"
-       href="{{ '/projects/' | relative_url }}">
-      View all projects ↗
-    </a>
-
-  </section>
-
-  <!-- CARTOGRAPHY -->
-  <section class="home-section shell" id="cartography">
-
-    <div class="home-section-heading">
-      <h2>Cartography</h2>
-    </div>
-
-    <p>
-      Exploring rivers, landscapes and patterns
-      through cartography.
-    </p>
-
-    <a class="home-text-link"
-       href="{{ '/maps/' | relative_url }}">
-      Explore maps ↗
-    </a>
-
   </section>
 
   <!-- SERVICES -->
@@ -191,20 +166,18 @@ layout: default
           <span>01 /</span>
           <h3>Data analysis</h3>
           <p>
-            Cleaning, exploring and analysing
-            datasets to identify patterns and
-            answer questions.
+            Cleaning, exploring and analysing datasets
+            to identify patterns and answer questions.
           </p>
           <small>R · Python · Statistics</small>
         </article>
 
         <article class="home-service">
           <span>02 /</span>
-          <h3>GIS & mapping</h3>
+          <h3>GIS &amp; mapping</h3>
           <p>
-            Spatial analysis, geospatial data
-            processing and maps designed to
-            communicate information clearly.
+            Spatial analysis, geospatial data processing
+            and maps designed to communicate information clearly.
           </p>
           <small>QGIS · Remote sensing</small>
         </article>
@@ -224,111 +197,13 @@ layout: default
           <span>04 /</span>
           <h3>Visual storytelling</h3>
           <p>
-            Maps, graphics and accessible
-            explanations that bring technical
-            findings to a wider audience.
+            Maps, graphics and accessible explanations
+            that bring technical findings to a wider audience.
           </p>
           <small>Cartography · Science communication</small>
         </article>
 
       </div>
-    </div>
-  </section>
-
-  <!-- DATA ATLAS -->
-  <section class="home-atlas shell" id="atlas">
-
-    <div>
-      <p class="home-kicker">PERSONAL PROJECTS</p>
-
-      <h2>Where data meets <em>curiosity.</em></h2>
-
-      <p>
-        I also enjoy experimenting with maps and
-        visualisations outside my research work.
-        My Data Atlas is a collection of these
-        explorations, including the Rhythm of
-        Polish Rivers.
-      </p>
-
-      <a class="home-text-link"
-         href="https://troctolite.github.io/Rhythm-of-Polish-river/"
-         target="_blank"
-         rel="noopener noreferrer">
-        Explore Rhythm of Polish Rivers ↗
-      </a>
-    </div>
-
-    <div class="home-atlas-note">
-      <span>THE DATA ATLAS</span>
-      <strong>Rivers, patterns<br>and places.</strong>
-      <span>AN ONGOING COLLECTION</span>
-    </div>
-
-  </section>
-
-  <!-- ABOUT -->
-  <section class="home-about">
-    <div class="shell home-about-inner">
-
-      <div>
-        <p class="home-kicker">ABOUT</p>
-        <h2>Curious about <em>how things work.</em></h2>
-      </div>
-
-      <div>
-        <p>
-          My background spans hydrological research
-          in Poland, GIS and remote sensing in India,
-          and international science coordination.
-        </p>
-
-        <p>
-          I enjoy finding patterns in data and
-          making complex information easier to
-          understand.
-        </p>
-
-        <a class="home-text-link"
-           href="{{ '/about/' | relative_url }}">
-          More about me ↗
-        </a>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- WRITING & COMICS -->
-  <section class="home-section shell">
-
-    <div class="home-section-heading">
-      <div>
-        <p class="home-kicker">BEYOND DATA</p>
-        <h2>Writing & <em>drawing.</em></h2>
-      </div>
-
-      <p>
-        A space for research notes, science
-        communication and creative experiments.
-      </p>
-    </div>
-
-    <div class="home-writing-grid">
-
-      <a href="{{ '/blog/' | relative_url }}">
-        <span>BLOG</span>
-        <h3>Notes from the field and the screen.</h3>
-        <p>Research, maps, methods and observations.</p>
-        <b>Read the blog ↗</b>
-      </a>
-
-      <a href="{{ '/comics/' | relative_url }}">
-        <span>COMICS</span>
-        <h3>Stories told a little differently.</h3>
-        <p>Drawings, experiments and visual stories.</p>
-        <b>Explore comics ↗</b>
-      </a>
-
     </div>
   </section>
 
