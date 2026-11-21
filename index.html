@@ -4,11 +4,12 @@ layout: default
 
 <main id="main">
 
-  <!-- HERO -->
+  <!-- INTRODUCTION -->
   <section class="home-hero" aria-labelledby="hero-heading">
     <div class="home-hero-inner shell">
 
       <div class="home-intro">
+
         <p class="home-kicker">
           WATER &amp; ENVIRONMENTAL DATA ANALYST
         </p>
@@ -19,27 +20,28 @@ layout: default
 
         <p class="home-lead">
           I'm Geetika Chauhan, a hydrologist and data
-          analyst based in Warsaw. I use statistics,
-          GIS and visualisation to understand patterns
-          and tell clearer stories with data.
+          analyst based in Warsaw, Poland.
+        </p>
+
+        <p class="home-description">
+          I work with data, maps and visualisations
+          to explore patterns in rivers and the environment.
+          I enjoy making complex information easier
+          to understand.
         </p>
 
         <div class="home-actions">
           <a class="home-btn home-btn-primary"
              href="{{ '/projects/' | relative_url }}">
-            Explore my work <span aria-hidden="true">↗</span>
+            Explore my work ↗
           </a>
 
           <a class="home-btn home-btn-secondary"
              href="{{ '/contact/' | relative_url }}">
-            Work with me <span aria-hidden="true">↗</span>
+            Get in touch ↗
           </a>
         </div>
 
-        <p class="home-availability">
-          Warsaw, Poland <span aria-hidden="true">·</span>
-          Open to roles and collaborations
-        </p>
       </div>
 
       <figure class="home-map">
@@ -50,179 +52,6 @@ layout: default
           fetchpriority="high"
         >
       </figure>
-
-    </div>
-  </section>
-
-  <!-- EXPERTISE -->
-  <div class="home-expertise">
-    <div class="shell home-expertise-inner">
-      <span>DATA ANALYSIS</span>
-      <span>GIS &amp; CARTOGRAPHY</span>
-      <span>HYDROLOGY</span>
-      <span>DATA VISUALISATION</span>
-    </div>
-  </div>
-
-  <!-- EXPLORE PORTFOLIO -->
-  <section class="home-section shell" id="explore">
-
-    <div class="home-section-heading">
-      <div>
-        <p class="home-kicker">EXPLORE</p>
-        <h2>Different ways of <em>seeing the world.</em></h2>
-      </div>
-
-      <p>
-        From hydrology and data analysis to maps,
-        writing and visual storytelling.
-      </p>
-    </div>
-
-    {% assign portfolio_paths = '/about/,/projects/,/maps/,/blog/,/comics/,/contact/' | split: ',' %}
-
-    <div class="portfolio-grid">
-
-      {% for path in portfolio_paths %}
-        {% assign matched_page = site.pages | where: 'url', path | first %}
-
-        {% if matched_page %}
-
-          {% case path %}
-
-            {% when '/about/' %}
-              {% assign fallback_title = 'About Me' %}
-              {% assign fallback_description = 'My journey from geology and GIS to hydrology and data visualisation.' %}
-
-            {% when '/projects/' %}
-              {% assign fallback_title = 'Projects' %}
-              {% assign fallback_description = 'Research and applied projects in water, data analysis and GIS.' %}
-
-            {% when '/maps/' %}
-              {% assign fallback_title = 'Maps' %}
-              {% assign fallback_description = 'Cartographic explorations of rivers, landscapes and spatial patterns.' %}
-
-            {% when '/blog/' %}
-              {% assign fallback_title = 'Blog' %}
-              {% assign fallback_description = 'Notes on research, mapping, methods and observations.' %}
-
-            {% when '/comics/' %}
-              {% assign fallback_title = 'Comics' %}
-              {% assign fallback_description = 'Drawings, experiments and stories told visually.' %}
-
-            {% when '/contact/' %}
-              {% assign fallback_title = 'Contact' %}
-              {% assign fallback_description = 'Get in touch about roles, collaborations or creative projects.' %}
-
-          {% endcase %}
-
-          <a class="portfolio-card"
-             href="{{ matched_page.url | relative_url }}">
-
-            <span class="portfolio-card-label">
-              {{ forloop.index | prepend: '0' | slice: -2, 2 }}
-            </span>
-
-            <h3>
-              {{ matched_page.title | default: fallback_title | escape }}
-            </h3>
-
-            <p>
-              {{ matched_page.description | default: fallback_description | escape }}
-            </p>
-
-            <span class="portfolio-card-link">
-              Explore ↗
-            </span>
-
-          </a>
-
-        {% endif %}
-      {% endfor %}
-
-    </div>
-  </section>
-
-  <!-- SERVICES -->
-  <section class="home-services" id="services">
-    <div class="shell">
-
-      <div class="home-section-heading">
-        <div>
-          <p class="home-kicker">COLLABORATE</p>
-          <h2>What I can <em>help with.</em></h2>
-        </div>
-
-        <p>
-          From messy datasets to clear maps and
-          useful visualisations.
-        </p>
-      </div>
-
-      <div class="home-service-grid">
-
-        <article class="home-service">
-          <span>01 /</span>
-          <h3>Data analysis</h3>
-          <p>
-            Cleaning, exploring and analysing datasets
-            to identify patterns and answer questions.
-          </p>
-          <small>R · Python · Statistics</small>
-        </article>
-
-        <article class="home-service">
-          <span>02 /</span>
-          <h3>GIS &amp; mapping</h3>
-          <p>
-            Spatial analysis, geospatial data processing
-            and maps designed to communicate information clearly.
-          </p>
-          <small>QGIS · Remote sensing</small>
-        </article>
-
-        <article class="home-service">
-          <span>03 /</span>
-          <h3>Water data</h3>
-          <p>
-            Hydrological time-series analysis,
-            river-flow trends and interpretation
-            of environmental datasets.
-          </p>
-          <small>Hydrology · Time series</small>
-        </article>
-
-        <article class="home-service">
-          <span>04 /</span>
-          <h3>Visual storytelling</h3>
-          <p>
-            Maps, graphics and accessible explanations
-            that bring technical findings to a wider audience.
-          </p>
-          <small>Cartography · Science communication</small>
-        </article>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section class="home-contact">
-    <div class="shell">
-
-      <p class="home-kicker">GET IN TOUCH</p>
-
-      <h2>Have something <em>in mind?</em></h2>
-
-      <p>
-        I'm open to water data analyst roles,
-        freelance projects and collaborations.
-      </p>
-
-      <a class="home-btn home-btn-primary"
-         href="{{ '/contact/' | relative_url }}">
-        Let's talk ↗
-      </a>
 
     </div>
   </section>
