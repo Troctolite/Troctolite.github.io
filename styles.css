@@ -1,103 +1,95 @@
-  .map-card img,
-  .map-placeholder {
-    height: 350px;
-  }
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display:ital@0;1&display=swap');
+
+/* =========================================
+   01. DESIGN SYSTEM
+   ========================================= */
+
+:root {
+  --paper: #101c19;
+  --ink: #f1f0e8;
+  --body: #b8c8bd;
+  --muted: #91a99b;
+  --green: #19382f;
+  --sage: #19382f;
+  --line: #354b40;
+  --rust: #a0d9bb;
+  --white: #19382f;
+
+  --surface: #162920;
+  --surface-light: #1c3b31;
+  --accent: #a0d9bb;
+  --accent-hover: #c7ead5;
+
+  --font-body: 'DM Sans', Arial, sans-serif;
+  --font-display: 'DM Serif Display', Georgia, serif;
+
+  --content-width: 1200px;
 }
 
-
-/* CONTACT PAGE */
-
-.contact-intro {
-  max-width: 750px;
-  margin: 0 0 30px;
-  color: #b8c8bd;
-  font-size: 17px;
-  line-height: 1.8;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
-#contact .home-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 14px;
-  margin-top: 28px;
+html {
+  scroll-behavior: smooth;
 }
 
-@media (max-width: 600px) {
-  #contact .home-actions {
-    flex-direction: column;
-    align-items: flex-start;
-  }
+body {
+  margin: 0;
+  min-width: 320px;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
 }
 
-/* ABOUT PAGE */
-
-.about-content {
-  max-width: 780px;
-  margin-top: 40px;
-}
-
-.about-content > p {
-  margin-bottom: 24px;
-  color: #b8c8bd;
-  font-size: 16px;
-  line-height: 1.9;
-}
-
-.about-content > .home-lead {
-  color: #f1f0e8;
-  font-size: 21px;
-  line-height: 1.6;
-}
-
-.about-cv {
-  margin-top: 55px;
-  padding-top: 35px;
-  border-top: 1px solid #354b40;
-}
-
-.about-cv h2 {
-  margin-bottom: 18px;
-  font-family: "DM Serif Display", Georgia, serif;
-  font-size: 32px;
-  font-weight: 400;
-  color: #f1f0e8;
-}
-
-.about-cv > p {
-  color: #b8c8bd;
-  line-height: 1.8;
-}
-
-.about-cv .home-tags {
-  margin: 25px 0 30px;
-}
-
-.about-cv .home-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 14px;
-}
-
-
-/* Compact Maps gallery — original design preserved */
-.maps-gallery {
-  grid-template-columns: repeat(auto-fit, minmax(220px, 280px));
-  justify-content: start;
-}
-.maps-gallery .map-card {
-  width: 100%;
-  max-width: 280px;
-}
-.maps-gallery .map-card img {
+img,
+svg,
+video {
   display: block;
-  width: 100%;
-  height: 220px;
-  object-fit: contain;
-  object-position: center;
+  max-width: 100%;
 }
-.maps-gallery .map-placeholder { height: 220px; }
 
-@media (max-width: 700px) {
-  .maps-gallery { grid-template-columns: minmax(0, 280px); }
+img {
+  height: auto;
 }
-"
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+  overflow-wrap: break-word;
+}
+
+h1,
+h2,
+h3 {
+  text-wrap: balance;
+  color: var(--ink);
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--paper);
+}
