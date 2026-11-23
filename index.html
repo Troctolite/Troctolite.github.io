@@ -1,3 +1,4 @@
+
 ---
 layout: default
 ---
@@ -56,4 +57,215 @@ layout: default
     </div>
   </section>
 
+
+  <!-- ABOUT ME -->
+  <section class="home-section shell" id="about">
+
+    <div class="home-section-heading">
+      <div>
+        <h2>About me</h2>
+      </div>
+    </div>
+
+    <div class="about-content">
+
+      <p class="home-lead">
+        I'm Geetika Chauhan, a hydrologist and data
+        analyst based in Warsaw, Poland.
+      </p>
+
+      <p>
+        My career journey has been like a river,
+        flowing through different fields, from
+        Geology to Remote Sensing and GIS, before
+        eventually finding its way into Hydrology.
+        I started my professional career in India
+        and later moved to Poland to pursue a PhD
+        in Hydrology.
+      </p>
+
+      <p>
+        The twists and turns of this journey have
+        helped me develop a diverse set of skills,
+        particularly in analysing environmental
+        data and communicating findings through
+        statistical analysis and visualisation.
+      </p>
+
+      <!-- CV AND PROFESSIONAL LINKS -->
+      <div class="about-cv">
+
+        <h2>Experience &amp; skills</h2>
+
+        <div class="home-tags">
+          <span>R</span>
+          <span>Python</span>
+          <span>QGIS</span>
+          <span>Hydrology</span>
+          <span>Statistical analysis</span>
+          <span>Data visualisation</span>
+          <span>Remote sensing</span>
+        </div>
+
+        <div class="home-actions">
+
+          <a class="home-btn home-btn-primary"
+             href="{{ '/about/Geetika_Chauhan_CV.pdf' | relative_url }}"
+             download>
+            Download CV ↓
+          </a>
+
+          <a class="home-btn home-btn-secondary"
+             href="https://www.linkedin.com/in/gchauhanphd"
+             target="_blank"
+             rel="noopener noreferrer">
+            LinkedIn <span aria-hidden="true">↗</span>
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+  
+<!-- BLOG -->
+<section class="home-section shell journal-page" id="blog">
+
+  <p class="eyebrow">
+    BLOG / SCIENCE · MAPS · STORIES
+  </p>
+
+  <h2>Rivers, maps &amp; <em>ideas.</em></h2>
+
+  <p class="journal-intro">
+    A growing collection of writing about rivers,
+    spatial data, research and visual storytelling.
+  </p>
+
+  <div class="journal-list">
+
+    {% for post in site.posts %}
+
+      <article class="journal-entry">
+
+        <div>
+          <p class="eyebrow">
+            {{ post.category | default: "Blog" | upcase }}
+            · {{ post.date | date: "%d %B %Y" }}
+          </p>
+
+          <h3>
+            <a href="{{ post.url | relative_url }}">
+              {{ post.title | escape }}
+            </a>
+          </h3>
+
+          <p>
+            {{ post.description | default: post.excerpt | strip_html | truncatewords: 35 }}
+          </p>
+
+          <a class="text-link"
+             href="{{ post.url | relative_url }}">
+            Read story ↗
+          </a>
+        </div>
+
+        <div class="entry-ornament" aria-hidden="true">
+          <span>✳</span>
+        </div>
+
+      </article>
+
+    {% else %}
+
+      <p>Articles coming soon.</p>
+
+    {% endfor %}
+
+  </div>
+
+</section>
+
+<!-- COMICS -->
+<section class="home-section shell inner-page" id="comics">
+
+  <p class="eyebrow">COMICS</p>
+
+  <h2>Stories in panels.</h2>
+
+  <p class="inner-intro">
+    I’m exploring comics as a way to tell stories.
+  </p>
+
+  <div class="inner-body">
+    <p>
+      This gallery is being built. I’ll add original
+      illustrations and comics here as they’re ready.
+    </p>
+
+    <p>
+      For now, you can explore my scientific projects
+      and blog while this part of the website grows.
+    </p>
+  </div>
+
+</section>
+
+<!-- CONTACT -->
+<section class="home-section shell" id="contact">
+
+  <div class="home-section-heading">
+    <div>
+      <p class="home-kicker">CONTACT</p>
+      <h2>Let's connect.</h2>
+    </div>
+  </div>
+
+  <p class="contact-intro">
+    I'm interested in opportunities and collaborations
+    involving hydrology, GIS, environmental data
+    and science communication.
+  </p>
+
+<!-- CONTACT LINKS -->
+    <div class="home-actions">
+
+      <!-- EMAIL -->
+      <a
+        class="home-btn home-btn-primary"
+        href="mailto:geetika.cha09@gmail.com"
+        aria-label="Send me an email"
+      >
+        Email me <span aria-hidden="true">↗</span>
+      </a>
+
+      <!-- LINKEDIN -->
+      <a
+        class="home-btn home-btn-secondary"
+        href="https://www.linkedin.com/in/gchauhanphd"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        LinkedIn <span aria-hidden="true">↗</span>
+      </a>
+
+      <!-- GITHUB -->
+      <a
+        class="home-btn home-btn-secondary"
+        href="https://github.com/Troctolite"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        GitHub <span aria-hidden="true">↗</span>
+      </a>
+
+    </div>
+
+  </section>
+
+
+
 </main>
+
