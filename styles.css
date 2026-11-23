@@ -101,3 +101,22 @@
 @media (max-width: 700px) {
   .maps-gallery { grid-template-columns: minmax(0, 280px); }
 }
+
+/* Homepage hero alignment — desktop only */
+@media (min-width: 851px) {
+
+  /* Move heading and introduction slightly higher */
+  .home-hero .home-intro {
+    transform: translateY(-35px);
+  }
+
+  /* Keep the full map visible */
+  .home-hero .home-map img {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 65svh;
+    object-fit: contain;
+  }
+
+}
